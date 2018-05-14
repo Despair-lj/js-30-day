@@ -125,8 +125,14 @@
 
   <script>
     function toggleOpen() {
+      let isAdd = false;
+      if (!this.classList.contains('open')) {
+        isAdd = true;
+      }
       panels.forEach(panel => panel.classList.remove('open'));      
-      this.classList.add('open');
+      if (isAdd) {
+        this.classList.add('open');  
+      }      
     }
 
     function toggleActive(e) {    
