@@ -89,20 +89,20 @@
 		
 		function handleCheck(e) {				
 			let newNum = this.dataset.num;
-			let up = Math.abs(firstCheck - newNum);
-			let down = Math.abs(lastCheck - newNum);	
+			let up = Math.abs(firstCheck - newNum); // 第一个选中项的data-num与最新选中项的data-num差距
+			let down = Math.abs(lastCheck - newNum); // 最后一个选中项的data-num与最新选中项的data-num差距
 
-			if (firstCheck !== lastCheck) {
-				if (up > down) {
+			if (firstCheck !== lastCheck) { // 不是只有一个项被选中
+				if (up > down) { // 如果最新选中项距离最后一个选项比较近，则更新最后一个选项
 					lastCheck = newNum
-				} else if (up < down) {
+				} else if (up < down) { // 如果最新选中项距离第一个选项比较近，则更新最后一个选项
 					firstCheck = newNum;
-				} else {
+				} else {  // 如果上下距离一致，则选择更新最后一项
 					lastCheck = newNum;
 				}
-			} else if (firstCheck === 0) {
+			} else if (firstCheck === 0) { // 第一次选择时进行初始化
 				firstCheck = lastCheck = newNum;
-			} else {
+			} else { 
 				lastCheck = newNum;
 			}
 			

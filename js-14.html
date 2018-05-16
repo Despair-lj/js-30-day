@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js-14</title>
+</head>
+<body>
+	
+	<script>
+		let age = 100;
+		let age2 = age;
+		console.log(age, age2);
+		age = 200;
+		console.log(age, age2);
+
+		let name = 'pencil';
+		let name2 = name;
+		console.log(name, name2);
+		name = 'Alex';
+		console.log(name, name2);
+
+		// Let's say we have an array
+		const players = ['wes', 'sarah', 'ryan', 'poppy'];
+		const team = players;
+		console.log(players, team);
+
+		const team2 = players.slice();
+
+		const team3 = [].concat(players);
+
+		const team4 = [...players];
+
+		const team5 = Array.from(players);
+
+		// Object
+		const person = {
+			name: 'pencil',
+			age: 80
+		}
+
+		const cap2 = Object.assign({}, person, { number: 100 });
+
+		const wes = {
+			name: 'wes',
+			age: 100,
+			social: {
+				twitter: '@wesbos',
+				facebook: 'wesbos.developer'
+			}
+		}
+
+		// error
+		const dev = Object.assign({}, wes);
+
+		const dev2 = JSON.parse(JSON.stringify(wes));
+
+	</script>
+</body>
+</html>
